@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('partnerships', function (Blueprint $table) {
             $table->id();
+            $table->string('image');
+
+            $table->softDeletes();
             $table->timestamps();
         });
     }

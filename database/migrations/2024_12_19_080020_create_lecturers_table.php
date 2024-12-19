@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('lecturers', function (Blueprint $table) {
             $table->id();
+            $table->string('nomor_induk')->nullable();
+            $table->string('name');
+            $table->string('slug');
+            $table->string('photo');
+            $table->string('education');
+            $table->string('position');
+            $table->string('topic')->nullable();
+            $table->foreignId('category_lecturer_id')->constrained()->cascadeOnDelete();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
