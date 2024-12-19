@@ -11,13 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('facilities', function (Blueprint $table) {
-            $table->id();
-            $table->string('image');
-            $table->text('content');
-
-            $table->softDeletes();
-            $table->timestamps();
+         Schema::table('registrations', function (Blueprint $table) {
+            $table->dropColumn('slug');
         });
     }
 
@@ -26,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('facilities');
+       Schema::table('registrations', function (Blueprint $table) {
+            $table->string('slug');
+        });
     }
 };
