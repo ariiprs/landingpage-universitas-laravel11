@@ -51,7 +51,8 @@ class AboutUsResource extends Resource
                 ImageColumn::make('photos.photo')
                     ->label('Photos')
                     ->circular(),
-                TextColumn::make('content'),
+                TextColumn::make('content')
+                ->words(5),
             ])
             ->filters([
                 //
