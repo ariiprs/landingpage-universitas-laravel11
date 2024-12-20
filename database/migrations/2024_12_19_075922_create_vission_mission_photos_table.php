@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('vission_mission_photos', function (Blueprint $table) {
             $table->id();
+            $table->string('photo');
+            $table->foreignId('vission_mission_id')->constrained()->cascadeOnDelete();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

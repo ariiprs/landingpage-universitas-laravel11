@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('vission_missions', function (Blueprint $table) {
             $table->id();
+            $table->text('visi');
+            $table->text('misi');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
